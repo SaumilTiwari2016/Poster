@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js && node socket/index.js && npm --prefix client start",
-    "server": "node server/index.js",
-    "socket": "node socket/index.js",
-    "client": "npm --prefix client start",
+    "start": "concurrently \"cd server && node index.js\" \"cd socket && node index.js\" \"cd client && npm start\"",
     "build": "npm i && cd server && npm i && cd .. && cd socket && npm i && cd .. && cd client && npm i && npm run build"
   },
   "author": "",
