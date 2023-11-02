@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd server && nodemon index.js\" \"cd socket && node index.js\" \" cd client && npm start\"",
+    "start": "cd server && node index.js  && cd .. && cd socket && node index.js  && cd .. && cd client && npm start",
     "build": "cd server && npm i && cd .. && cd socket && npm i && cd .. && cd client && npm i && npm run build"
   },
   "author": "",
