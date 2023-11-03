@@ -26,8 +26,9 @@ app.use('/images', express.static('images'));
 
 
 app.get('/', (req, res) => {
-  res.redirect('/auth'); // Redirect to the '/auth' route
+  res.send('Welcome to your Express.js application!');
 });
+
 
 
 dotenv.config();
