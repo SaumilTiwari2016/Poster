@@ -25,11 +25,9 @@ app.use(express.static('public'));
 app.use('/images', express.static('images'));
 
 
-app.use(express.static("client/build"));
-const path = require("path");
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "cd ..","client", "build", "index.html"))
-})
+app.get('/', (req, res) => {
+  res.redirect('/auth'); // Redirect to the '/auth' route
+});
 
 
 dotenv.config();
